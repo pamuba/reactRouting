@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import { globalStyles } from "../styles/globals";
+import { globalStyles, images } from "../styles/globals";
 import Card from "../shared/card";
 
 export default function ReviewDetails({ navigation }) {
@@ -9,6 +9,7 @@ export default function ReviewDetails({ navigation }) {
   //     navigation.pop();
   // }
 
+  const rating = navigation.getParam('rating');
   return (
     <View style={globalStyles.container}>
       <Card>
@@ -17,7 +18,7 @@ export default function ReviewDetails({ navigation }) {
 
         <View stye={styles.rating}>
           <Text>GameZone rating:</Text>
-          <Image source={require('../assets/rating-1.png')} />
+          <Image source={images.ratings[rating]} />
         </View>
 
         {/* <Text>{navigation.getParam('rating')}</Text> */}

@@ -8,20 +8,24 @@ const screens = {
     Home: {
         screen: Home,
         navigationOptions:{
-            title:'Home Screen',
+            title:'GameZone',
+            // headerStyle:{backgroundColor: 'blue'}
         }
        
     },
     ReviewDetails: {
         screen: ReviewDetails,
         navigationOptions:{
-            title:'Review Details Screen',
+            title:'Review Details',
         }
-    },
-    
+    },   
 }
 
-
-const HomeStack = createStackNavigator(screens);
+const HomeStack = createStackNavigator(screens, {
+    defaultNavigationOptions:{
+        headerTintColor:'#444',
+        headerStyle:{backgroundColor: '#eee', height:60}
+    }
+});
 
 export default createAppContainer(HomeStack);
